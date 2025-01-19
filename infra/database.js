@@ -7,10 +7,11 @@ async function query(queryObject) {
     const result = await client.query(queryObject);
     return result;
   } catch (error) {
+    console.log("\n erro dento do catch do database.js:");
     console.log(error);
     throw error;
   } finally {
-    await client.end();
+    await client?.end();
   }
 }
 
